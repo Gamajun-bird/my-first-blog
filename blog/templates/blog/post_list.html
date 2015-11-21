@@ -5,22 +5,17 @@
 <body>
   <h1> HELLO </h1>
   <div>
-    <h2><a href="">Djungogirls</a></h2>
+    {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaks }}</p>
+          </div>
+      {% endfor %}
+
   </div>
 <div>
   <p>Kickstarter shabby chic celiac seitan mumblecore gentrify banh mi, pop-up synth tattooed kale chips. Ennui before they sold out 3 wolf moon mixtape, organic sustainable intelligentsia disrupt small batch polaroid listicle. Trust fund synth sartorial, single-origin coffee schlitz thundercats sriracha tumblr portland hashtag cold-pressed. Shabby chic stumptown chicharrones green juice. Pop-up shoreditch +1 gastropub retro portland. Salvia quinoa ramps, literally taxidermy kogi put a bird on it brooklyn dreamcatcher green juice umami sriracha keffiyeh. Cliche etsy butcher post-ironic leggings, biodiesel meggings raw denim pinterest four dollar toast.</p>
 </div>
-<div>
-               <p>published: 14.06.2014, 12:14</p>
-               <h2><a href="">My first post</a></h2>
-               <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-           </div>
-
-           <div>
-               <p>published: 14.06.2014, 12:14</p>
-               <h2><a href="">My second post</a></h2>
-               <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-           </div>
-
-  </body>
+</body>
 </html>
