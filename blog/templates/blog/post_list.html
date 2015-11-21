@@ -1,21 +1,12 @@
-<html>
-<head>
-  <title> Gamajun Bird </title>
-</head>
-<body>
-  <h1> HELLO </h1>
-  <div>
-    {% for post in posts %}
-          <div>
-              <p>published: {{ post.published_date }}</p>
-              <h1><a href="">{{ post.title }}</a></h1>
-              <p>{{ post.text|linebreaks }}</p>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+      <div class="post">
+          <div class="date">
+              {{ post.published_date }}
           </div>
-      {% endfor %}
-
-  </div>
-<div>
-  <p>Kickstarter shabby chic celiac seitan mumblecore gentrify banh mi, pop-up synth tattooed kale chips. Ennui before they sold out 3 wolf moon mixtape, organic sustainable intelligentsia disrupt small batch polaroid listicle. Trust fund synth sartorial, single-origin coffee schlitz thundercats sriracha tumblr portland hashtag cold-pressed. Shabby chic stumptown chicharrones green juice. Pop-up shoreditch +1 gastropub retro portland. Salvia quinoa ramps, literally taxidermy kogi put a bird on it brooklyn dreamcatcher green juice umami sriracha keffiyeh. Cliche etsy butcher post-ironic leggings, biodiesel meggings raw denim pinterest four dollar toast.</p>
-</div>
-</body>
-</html>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+      </div>
+  {% endfor %}
+ {% endblock content %}
